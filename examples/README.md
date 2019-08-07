@@ -25,7 +25,7 @@ Here is a more detailed explanation of what the demo script is doing:
 ```bash
 cd mysql
 
-docker volume inspect superset_mysql
+docker volume create superset_mysql
 
 docker volume create superset_redis
 
