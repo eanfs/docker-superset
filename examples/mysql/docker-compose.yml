@@ -13,6 +13,9 @@ services:
       MYSQL_DATABASE: superset
       MYSQL_USER: superset
       MYSQL_PASSWORD: superset
+    ports:
+      - "3306:3306"
+      - "33060:33060"
     volumes:
       - mysql:/var/lib/mysql
   superset:
@@ -28,5 +31,9 @@ services:
     volumes:
       - ./superset_config.py:/etc/superset/superset_config.py
 volumes:
-  mysql:
+  mysql: 
+    external:
+      name: superset_mysql
   redis:
+    external:
+      name: superset_redis
