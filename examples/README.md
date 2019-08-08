@@ -26,8 +26,10 @@ Here is a more detailed explanation of what the demo script is doing:
 cd mysql
 
 docker volume create superset_mysql
+# docker volume rm superset_mysql
 
 docker volume create superset_redis
+# docker volume rm superset_redis
 
 # Start Redis & MySQL services
 docker-compose up -d redis mysql
